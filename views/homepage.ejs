@@ -1,0 +1,18 @@
+<% title = typeof(session.user) === 'undefined' ? 'Homepage' : 'Dashboard' %>
+
+Homepage.
+
+<% if (typeof(session.user) !== 'undefined') { %>
+<br>
+<br>
+User data:
+<br>
+<% for (var key in session.user) { %>
+<%= key %>: <%= session.user[key] %><br>
+<% } %>
+<br>
+<a href="/sign_out">Sign Out</a>
+<% } else { %>
+<a href="/sign_up">Sign Up</a>
+<a href="/sign_in">Sign In</a>
+<% } %>

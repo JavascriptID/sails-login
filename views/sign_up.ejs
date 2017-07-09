@@ -1,0 +1,21 @@
+<% title = 'Sign Up' %>
+
+Sign Up
+<br>
+<br>
+<a href="/">Home</a>
+<a href="sign_in">Sign In</a>
+<br>
+<% if (typeof(session.message) !== 'undefined') { %>
+<br>
+<strong>Message: <%= session.message %></strong>
+<br>
+<% session.message = undefined %>
+<% } %>
+<br>
+<form method="post" action="/sign_up">
+  <input type="email" name="email" placeholder="Email">
+  <input type="password" name="password" placeholder="Password">
+  <br>
+  <input type="submit" value="Sign Up">
+</form>
